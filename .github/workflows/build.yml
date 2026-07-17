@@ -56,6 +56,9 @@ jobs:
           # Создаем файл ru-blocked
           echo "include:antifilter-download-community" > ./community/data/ru-blocked
           echo "include:refilter" >> ./community/data/ru-blocked
+          echo "include:antifilter-download" > ./community/data/ru-blocked-all
+          echo "include:antifilter-download-community" >> ./community/data/ru-blocked-all
+          echo "include:refilter" >> ./community/data/ru-blocked-all 
 
       - name: Build geosite.dat
         run: |
