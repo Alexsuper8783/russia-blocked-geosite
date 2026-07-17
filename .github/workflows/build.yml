@@ -53,7 +53,7 @@ jobs:
       - name: Build geosite.dat
         run: |
           cd custom
-          go run ./ --exportlists=ru-blocked --datname=geosite.dat --datapath=../community/data
+          go run ./ --exportlists=ru-blocked,youtube,discord,telegram --datname=geosite.dat --datapath=../community/data
 
       - name: Prepare publish
         run: |
