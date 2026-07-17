@@ -54,14 +54,11 @@ jobs:
           # Создаем файл ru-blocked
           echo "include:antifilter-download-community" > ./community/data/ru-blocked
           echo "include:refilter" >> ./community/data/ru-blocked
-          echo "include:antifilter-download" > ./community/data/ru-blocked-all
-          echo "include:antifilter-download-community" >> ./community/data/ru-blocked-all
-          echo "include:refilter" >> ./community/data/ru-blocked-all 
 
       - name: Build geosite.dat
         run: |
           cd custom
-          go run ./ --exportlists=ru-blocked,youtube,discord,telegram,ru-blocked-all,category-ads-all --datname=geosite.dat --datapath=../community/data
+          go run ./ --exportlists=ru-blocked,youtube,discord,telegram,category-ads-all --datname=geosite.dat --datapath=../community/data
 
       - name: Prepare publish
         run: |
