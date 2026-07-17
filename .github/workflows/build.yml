@@ -45,7 +45,7 @@ jobs:
       - name: Get and prepare lists
         run: |
           # Скачиваем списки
-          curl -sSL https://antifilter.download/list/domains.lst > ./antifilter-download.txt
+          curl -sSL https://antifilter.download/list/domains.lst > ./antifilter-download
           curl -sSL https://community.antifilter.download/list/domains.lst > ./community/data/antifilter-download-community
           curl -sSL https://raw.githubusercontent.com/1andrevich/Re-filter-lists/refs/heads/main/domains_all.lst > ./community/data/refilter
           
