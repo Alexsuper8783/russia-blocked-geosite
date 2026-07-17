@@ -115,6 +115,7 @@ jobs:
           tag: ${{ env.TAG_NAME }}
           file_glob: true
           file: ./publish/*
+          create_release: true
 
       - name: Git push assets to "release" branch
         run: |
