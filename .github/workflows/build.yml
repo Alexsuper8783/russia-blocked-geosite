@@ -45,6 +45,7 @@ jobs:
       - name: Get and prepare lists
         run: |
           # Скачиваем списки
+          curl -sSL https://antifilter.download/list/domains.lst > ./antifilter-download.txt
           curl -sSL https://community.antifilter.download/list/domains.lst > ./community/data/antifilter-download-community
           curl -sSL https://raw.githubusercontent.com/1andrevich/Re-filter-lists/refs/heads/main/domains_all.lst > ./community/data/refilter
           
@@ -54,6 +55,10 @@ jobs:
           # Создаем файл ru-blocked
           echo "include:antifilter-download-community" > ./community/data/ru-blocked
           echo "include:refilter" >> ./community/data/ru-blocked
+          
+          echo "include:antifilter-download" > ./community/data/ru-blocked-all
+          echo "include:antifilter-download-community" >> ./community/data/ru-blocked-all
+          echo "include:refilter" >> ./community/data/ru-blocked-all      
 
       - name: Build geosite.dat
         run: |
